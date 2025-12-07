@@ -6,11 +6,11 @@
 
 Пайплайн состоит из нескольких компонентов:
 
-1. **Vector Store** (`vector_store.py`) - управление векторным хранилищем для поиска релевантных документов
+1. **Vector Store** (`vector_store.py`) - создание векторов и поиск релевантных документов
 2. **RAG Pipeline** (`rag_pipeline.py`) - основной класс, объединяющий retrieval и generation
 3. **Data Processor** (`data_processor.py`) - обработка и подготовка текстовых данных
 4. **Configuration** (`config.py`, `config.yaml`) - управление конфигурацией пайплайна
-5. **Evaluation** (`evaluate_pipeline.py`) - оценка качества работы пайплайна
+5. **Evaluation** (`evaluate_pipeline.py`) - оценка качества работы пайплайна на ru_rag_test_dataset
 
 ## Требования
 
