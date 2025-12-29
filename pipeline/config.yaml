@@ -1,0 +1,32 @@
+# RAG Pipeline Configuration
+prompt: >
+    Используй данные из контекста для ответа на вопрос. Запрещается придумывать ответы, которые не содержат информации из контекста. Если ответа на вопрос нет в контекстах - верни "N/A". Если ответ на вопрос есть в контекстах - верни только сам ответ без лишних слов и комментариев.
+    Например:
+    Если спрашивают год события - пиши только сам год с буквой "г".
+    Если спрашивают число(не календарная дата) - пиши только само число и единицу измерения.
+    Если спрашивают дату - пиши только дату. Например, "1 мая 2025 г".
+
+# paths
+dataset_path: "./ru_rag_test_dataset_renamed.pkl"
+files_dir: "./files"
+cleaned_files_dir: "ru_rag_test_dataset/EDA/files_cleaned"
+
+# models
+embedding_model_name: "intfloat/multilingual-e5-small" #"DeepPavlov/rubert-base-cased"
+llm_model_name: "qwen2.5:0.5b-instruct"
+
+vector_store_path: "vector_store.index"
+
+# RAG settings
+top_k: 3
+chunk_size: 512
+chunk_overlap: 100
+
+# vllm settings
+vllm_engine:
+    sampling_params:
+      max_tokens: 512
+      temperature: 0.7
+      top_p: 0.8
+      top_k: 20
+      min_p: 0.0

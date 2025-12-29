@@ -1,0 +1,19 @@
+# --- API ---
+fastapi
+uvicorn[standard]
+pydantic
+
+# --- config / utils ---
+pyyaml
+requests
+tqdm
+
+# --- data ---
+numpy
+pandas
+
+# --- embeddings ---
+sentence-transformers
+
+# --- vector store ---
+faiss-cpu
