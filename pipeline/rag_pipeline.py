@@ -79,7 +79,7 @@ class RAGPipeline:
 
     def query(self, question: str):
         # 1) retrieve
-        contexts = self.vector_store.search(question)
+        contexts = self.vector_store.search(question, top_k=self.config.top_k)
 
         # contexts обычно список кортежей (chunk_id, score, text)
         prompt = self.generate_prompt(question, contexts)
