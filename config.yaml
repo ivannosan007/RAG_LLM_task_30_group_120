@@ -14,6 +14,7 @@ cleaned_files_dir: "ru_rag_test_dataset/EDA/files_cleaned"
 # models
 embedding_model_name: "intfloat/multilingual-e5-small" #"DeepPavlov/rubert-base-cased"
 llm_model_name: "qwen2.5:0.5b-instruct"
+reranker_model_name: "BAAI/bge-reranker-v2-m3"
 
 vector_store_path: "vector_store.index"
 
@@ -21,6 +22,10 @@ vector_store_path: "vector_store.index"
 top_k: 3
 chunk_size: 512
 chunk_overlap: 100
+dense_candidate_k: 40
+bm25_candidate_k: 40
+rerank_candidate_k: 30
+rrf_k: 60
 
 # vllm settings
 vllm_engine:
