@@ -88,12 +88,14 @@ def calculate_bert_score(predicted_answers, ground_truth_answers):
     
     P, R, F1 = score(preds, gt_labels, lang='ru', verbose=False)
     # logger.info("BERTScore F1 detailed comparison:")
-    # for i, (pred, gt, f1) in enumerate(zip(predicted_answers, ground_truth_answers, F1)):
-    #     if f1.item() < 0.7:
-    #         logger.info(f"Sample {i+1}:")
-    #         logger.info(f"Prediction: {pred}")
-    #         logger.info(f"Ground Truth: {gt}")
-    #         logger.info(f"F1 Score: {f1.item():.4f}")
+    for i, (pred, gt, f1) in enumerate(zip(predicted_answers, ground_truth_answers, F1)):
+        if pred == "N/A":
+            F1[i] = 0.0
+        # if f1.item() < 0.7:
+        # logger.info(f"Sample {i+1}:")
+        # logger.info(f"Prediction: {pred}")
+        # logger.info(f"Ground Truth: {gt}")
+        # logger.info(f"F1 Score: {f1.item():.4f}")
     return F1.mean().item()
 
 
