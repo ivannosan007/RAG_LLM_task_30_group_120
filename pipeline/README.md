@@ -34,6 +34,22 @@ python evaluate_pipeline.py
 - **MRR** - Mean Reciprocal Rank
 - **BERTScore F1** - семантическое сходство между предсказанными и реальными ответами.
 
+## MLflow
+
+Пайплайн интегрирован с MLflow для трекинга экспериментов и логирования метрик.
+
+### Просмотр результатов MLflow
+
+Для просмотра результатов в MLflow UI:
+
+```bash
+# Запуск MLflow UI с файловым backend
+mlflow ui --backend-store-uri file:./mlruns
+
+# Или открыть в браузере
+open http://localhost:5000
+```
+
 ## Результаты тестирования
 
 Тестирование модели **Qwen/Qwen2.5-7B-Instruct** с различными параметрами chunk_size и chunk_overlap:

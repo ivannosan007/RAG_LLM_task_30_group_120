@@ -30,3 +30,9 @@ vllm_engine:
       top_p: 0.8
       top_k: 20
       min_p: 0.0
+
+# mlflow settings
+mlflow:
+    tracking_uri: "file:./mlruns"
+    experiment_name: "rag_pipeline_evaluation"
+    artifact_location: "./mlruns_artifacts"
