@@ -18,3 +18,9 @@ class Config:
         self.files_dir = os.path.join(base_dir, self.files_dir)
         self.cleaned_files_dir = os.path.join(base_dir, self.cleaned_files_dir)
         self.vector_store_path = os.path.join(base_dir, self.vector_store_path)
+        
+        if hasattr(self, 'mlflow') and self.mlflow:
+            if 'artifact_location' not in self.mlflow:
+                self.mlflow['artifact_location'] = os.path.join(base_dir, 'mlruns_artifacts')
+            else:
+                self.mlflow['artifact_location'] = os.path.join(base_dir, self.mlflow['artifact_location'])
