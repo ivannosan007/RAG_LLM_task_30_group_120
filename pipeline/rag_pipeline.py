@@ -185,7 +185,7 @@ class RAGPipeline:
                 )
                 for p in prompts
             ]
-
+        
         logger.info(f"Generating {len(texts)} responses with vLLM using chat template")
         outputs = self.llm.generate(texts, self.sampling_params)
         responses = [output.outputs[0].text for output in outputs]
