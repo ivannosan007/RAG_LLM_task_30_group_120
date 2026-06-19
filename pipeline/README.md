@@ -11,6 +11,7 @@
 3. **Data Processor** (`data_processor.py`) - обработка и подготовка текстовых данных
 4. **Configuration** (`config.py`, `config.yaml`) - управление конфигурацией пайплайна
 5. **Evaluation** (`evaluate_pipeline.py`) - оценка качества работы пайплайна на ru_rag_test_dataset
+6. **Web UI** (`app.py`) - Streamlit-приложение для интерактивных вопросов и ответов
 
 ## Требования
 
@@ -19,6 +20,24 @@
 ```bash
 pip install -r requirements.txt
 ```
+
+### Web-приложение (Streamlit)
+
+Интерактивный интерфейс для задавания вопросов по документам:
+
+```bash
+cd pipeline
+source .venv/bin/activate
+
+# macOS: запустите Ollama в отдельном терминале
+ollama serve
+export LLM_BACKEND=ollama
+export OLLAMA_MODEL=qwen2.5-coder:7b
+
+streamlit run app.py
+```
+
+Откройте в браузере адрес, который покажет Streamlit (обычно http://localhost:8501).
 
 ### Оценка качества
 
